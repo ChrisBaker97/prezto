@@ -36,6 +36,11 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'git' \
+  'homebrew' \
+  'syntax-highlighting' \
+  'history-substring-search' \
+  'autosuggestions' \
+  'osx' \
   'prompt'
 
 #
@@ -71,7 +76,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-# zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
 # GNU Utility

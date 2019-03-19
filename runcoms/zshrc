@@ -11,8 +11,26 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-DEFAULT_USER="chris"
+DEFAULT_USER="$(whoami)"
 
+# Configure aliases
 if [[ -s "${ZDOTDIR:-$HOME}/.aliases" ]]; then
   source "${ZDOTDIR:-$HOME}/.aliases"
 fi
+
+# Configure Homebrew
+if [[ -s "${ZDOTDIR:-$HOME}/.brewrc" ]]; then
+  source ${ZDOTDIR:-$HOME}/.brewrc
+fi
+
+# Display red dots whilst waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+# Fix solarized-dark coloring for zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=023'
+
+# Apply solarized-dark compatible version of LSCOLORS
+export LSCOLORS=exfxfeaeBxxehehbadacea
+
+# Start rbenv
+eval "$(rbenv init -)"
